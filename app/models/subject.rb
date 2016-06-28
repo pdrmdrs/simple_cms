@@ -1,5 +1,11 @@
 class Subject < ActiveRecord::Base
 
+	#indicando que um Subject tem apenas uma Page
+	#has_one :page
+
+	#indicando que um Subject tem várias Pages
+	has_many :pages
+
 	scope :visible, lambda {where(:visible => true)}
 	scope :invisible, lambda {where(:visible => false)}
 
